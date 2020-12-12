@@ -33,8 +33,8 @@ public class DataCreate {
 
     public void initData() {
 
-        //Call<GetVideoResponse> videoResponseCall = testService.getVideoList(TAG);//只下载我上传的视频
-        Call<GetVideoResponse> videoResponseCall = testService.getVideoList();
+//        Call<GetVideoResponse> videoResponseCall = testService.getVideoList(TAG);//只下载我上传的视频
+        Call<GetVideoResponse> videoResponseCall = testService.getVideoList();//拉取所有人的视频
         videoResponseCall.enqueue(new Callback<GetVideoResponse>() {
 
             @Override

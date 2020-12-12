@@ -3,6 +3,11 @@
     package="com.bytedance.finalhomework">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    //zzy
+    <uses-permission android:name="android.permission.CAMERA" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    //zzy
     <application
         android:allowBackup="true"
         android:icon="@mipmap/launcher"
@@ -24,6 +29,22 @@
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait" />
+
+        //zzy
+        <activity android:name=".activity.CameraActivity">
+        </activity>
+
+        <activity android:name=".activity.SimpleVideoRecordActivity">
+        </activity>
+
+        <activity android:name=".activity.VideoRecordActivity">
+
+        </activity>
+
+        <activity android:name=".activity.TakePictureActivity">
+
+        </activity>
+        //zzy
     </application>
 
 </manifest>

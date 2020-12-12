@@ -57,11 +57,11 @@
             app:xTabTextColor="#8F8F94"
             app:xTabTextSize="15sp" />
 
-        <Button
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_centerInParent="true"
-            android:background="@mipmap/ic_main_menu" />
+<!--        <Button-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:background="@mipmap/ic_main_menu" />-->
     </RelativeLayout>
 
 </RelativeLayout>

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -104,5 +106,14 @@ public class MainActivity extends BaseActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    //前往录制
+    public void gotoSimpleVideoRecordActivity(View view){
+
+        //创建一个意图
+        Intent intent = new Intent(MainActivity.this, SimpleVideoRecordActivity.class);
+        startActivity(intent);
+
     }
 }
