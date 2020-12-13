@@ -16,11 +16,11 @@
 
     <Button
         android:id="@+id/record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Record">
+        android:background="@mipmap/record">
     </Button>
 
     <!--<Button

@@ -88,13 +88,6 @@ public class MainFragment extends BaseFragment {
 
                 curPage = position;
 
-//                if (position == 1) {
-//                    //继续播放
-//                    RxBus.getDefault().post(new PauseVideoEvent(true));
-//                } else {
-//                    //切换到其他页面，需要暂停视频
-//                    RxBus.getDefault().post(new PauseVideoEvent(false));
-//                }
             }
 
             @Override

@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -136,7 +137,7 @@ public class SimpleVideoRecordActivity extends AppCompatActivity {
     //图片转二进制
     private MultipartBody.Part getMultipartFroAssetImage(){
         final String partKey = "cover_image";
-        final String localFileName = "pic.png";
+        final String localFileName = "pic.jpg";
         final AssetManager assetManager = getAssets();
         RequestBody requestFile;
         try {
@@ -152,12 +153,13 @@ public class SimpleVideoRecordActivity extends AppCompatActivity {
     }
     private void upLoad(String mCurrentPhotoPath) {
 
-        testService.post("777777777777","yf","our sjtu",getMultipartFroAssetImage(),getMultipartFroAssetVideo(mCurrentPhotoPath)).enqueue(new Callback<ResponseBody>() {
+        testService.post("777777777777","yf","our sjtu123",getMultipartFroAssetImage(),getMultipartFroAssetVideo(mCurrentPhotoPath)).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
                 if(response.isSuccessful()){
                     Log.d("77777777","写入成功");
+
                 }
 
             }
@@ -168,22 +170,6 @@ public class SimpleVideoRecordActivity extends AppCompatActivity {
             }
         });
     }
-//    //视频转二进制demo
-//    private MultipartBody.Part getMultipartFroAssetVideo(){
-//        final String partKey = "video";
-//        final String localFileName = "video.mp4";
-//        final AssetManager assetManager = getAssets();
-//        RequestBody requestFile;
-//        try {
-//            final InputStream inputStream = assetManager.open(localFileName);
-//            requestFile = RequestBody
-//                    .create(MediaType.parse("multipart/form-data"),toByteArray(inputStream));
-//            return MultipartBody.Part.createFormData(partKey, localFileName, requestFile);
-//        }catch (IOException e){
-//            e.printStackTrace();
-//            return null;//!!!不确定
-//        }
-//    }
 
 
     //视频转二进制
@@ -194,7 +180,7 @@ public class SimpleVideoRecordActivity extends AppCompatActivity {
             FileInputStream fis = new FileInputStream(file);
             requestFile = RequestBody
                     .create(MediaType.parse("multipart/form-data"), toByteArray(fis));
-            return MultipartBody.Part.createFormData("video", "videoFileName", requestFile);
+            return MultipartBody.Part.createFormData("video", file.getName(), requestFile);
         } catch (IOException e) {
             e.printStackTrace();
             return null;

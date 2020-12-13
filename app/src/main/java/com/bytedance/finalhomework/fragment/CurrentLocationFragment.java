@@ -26,7 +26,6 @@ public class CurrentLocationFragment extends BaseFragment {
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
     private GridVideoAdapter adapter;
-
     @BindView(R.id.refreshlayout)
     SwipeRefreshLayout refreshLayout;
 

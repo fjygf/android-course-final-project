@@ -38,13 +38,10 @@ public class GridVideoAdapter extends BaseRvAdapter<VideoBean, GridVideoAdapter.
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .into(holder.ivCover);
-//        holder.ivCover.setBackgroundResource(videoBean.getCoverRes());//封面
         holder.tvContent.setText("#" +videoBean.getUserBean().getNickName()+ "#" + videoBean.getContent());//作者名字+附加信息
 
         holder.itemView.setOnClickListener(v -> {
-            //点击播放事件
-            //PlayListActivity.initPos = position;
-            //context.startActivity(new Intent(context, PlayListActivity.class));
+
             //页面跳转并传递url参数
             Intent intent =new Intent(context, PlayListActivity.class);
             Bundle bundle=new Bundle();

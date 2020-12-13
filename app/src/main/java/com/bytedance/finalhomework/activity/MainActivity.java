@@ -1,14 +1,11 @@
 package com.bytedance.finalhomework.activity;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bytedance.finalhomework.R;
@@ -19,7 +16,6 @@ import com.bytedance.finalhomework.fragment.MainFragment;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import rx.functions.Action1;
 //主页面
 public class MainActivity extends BaseActivity {
     @BindView(R.id.viewpager)
@@ -36,7 +32,6 @@ public class MainActivity extends BaseActivity {
     private ArrayList<Fragment> fragments = new ArrayList<>();//包括mainFragment和personalHomeFragment
     public static int curMainPage;
     private MainFragment mainFragment = new MainFragment();//主Fragment（0）。里面包含了海淀和推荐页面
-//    private PersonalHomeFragment personalHomeFragment = new PersonalHomeFragment();//个人主页（1）
     /** 上次点击返回键时间 */
     private long lastTime;
     /** 连续按返回键退出时间 */
@@ -56,18 +51,9 @@ public class MainActivity extends BaseActivity {
         }
 
         fragments.add(mainFragment);
-//        fragments.add(personalHomeFragment);
         pagerAdapter = new CommPagerAdapter(getSupportFragmentManager(), fragments, new String[]{"",""});
         viewPager.setAdapter(pagerAdapter);
 
-//        //点击头像切换页面
-//        //暂时不要
-//        RxBus.getDefault().toObservable(MainPageChangeEvent.class)
-//                .subscribe((Action1<MainPageChangeEvent>) event -> {
-//                    if (viewPager != null) {
-//                        viewPager.setCurrentItem(event.getPage());
-//                    }
-//                });
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -79,11 +65,6 @@ public class MainActivity extends BaseActivity {
             public void onPageSelected(int position) {
                 curMainPage = position;
 
-//                if (position == 0) {
-//                    RxBus.getDefault().post(new PauseVideoEvent(true));
-//                } else if (position == 1){
-//                    RxBus.getDefault().post(new PauseVideoEvent(false));
-//                }
             }
 
             @Override
